@@ -1,0 +1,34 @@
+.D3SizeBar {
+  vertical-align: top;
+  padding-top: 12%;
+  /* transform: rotate(90deg); */
+  display: inline-block;
+  position: fixed;
+  overflow: visible;
+}
+.D3SizeBar-color {
+  vertical-align: top;
+  align-items: center;
+  transform: rotate(90deg);
+  display: inline-block;
+  position: fixed;
+}
+
+.sizebar-div {
+  width: 25%;
+  margin: 0 auto;
+}
+
+.graph-size-bar {
+  margin-right: -100px;
+  display: inline-block;
+}
+.graph-size-bar-color {
+  margin-left: -10px;
+  display: inline-block;
+}
+.sizeBarDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,51 @@
+#mobile-navbar {
+  position: fixed !important;
+  right: 0px !important;
+  bottom: 0px !important;
+}
+
+.custom.powerBtn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(200%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 59, 59);
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 24% 34%,
+    rgba(39, 143, 43, 1) 21%,
+    rgba(136, 255, 230, 1) 100%
+  );
+}
+
+.custom.powerBtn.power-off {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(200%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  /* ff 3.6+ */
+  background: -moz-radial-gradient(
+    circle at 27% 28%,
+    rgba(128, 121, 217, 1) 0%,
+    rgba(7, 58, 187, 1) 100%
+  );
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 27% 28%,
+    rgba(128, 121, 217, 1) 0%,
+    rgba(7, 58, 187, 1) 100%
+  );
+}
+
+.custom.powerBtn:hover {
+  box-shadow: 2px 2px 8px grey;
+}

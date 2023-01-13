@@ -1,0 +1,124 @@
+.modal__container {
+  margin-top: 80px;
+}
+
+.modal__card__badge--create {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: rgb(88, 88, 88);
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.modal__card__btn--create {
+  width: 180px;
+  height: 50px;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+  /* global 94%+ browsers support */
+  background: linear-gradient(
+    90deg,
+    rgba(76, 175, 80, 1) 0%,
+    rgba(49, 220, 255, 1) 100%
+  );
+}
+
+.modal__card--dark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 460px;
+  border: 0.1px solid rgb(190, 190, 190);
+  background-color: #24315a;
+  transform: translate(-40%);
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal__card--light {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 460px;
+  border: 0.1px solid #24315a;
+  background-color: white;
+  transform: translate(-40%);
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal__card__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modal__card--dark input {
+  background: transparent;
+  border: none;
+  color: white;
+  border-bottom: 1px solid white;
+  outline: none;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+.modal__card--light input {
+  background: transparent;
+  border: none;
+  color: black;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+
+.modal__card__header--dark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.modal__card__header--light {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.modal__card__header--dark input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  font-size: 17px;
+  margin-left: 10px;
+}
+.modal__card__header--light input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 17px;
+  margin-left: 10px;
+}

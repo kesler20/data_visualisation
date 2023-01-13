@@ -1,15 +1,4 @@
-import { connect } from "mqtt";
 let CryptoJS = require("crypto-js");
-
-export const unifiedNamespaceGenerator = (
-  enterprise,
-  site,
-  area,
-  line,
-  cell
-) => {
-  return `${enterprise.toLowerCase()}, ${site.toLowerCase()}, ${area.toLowerCase()}, ${line.toLowerCase()}, ${cell.toLowerCase()}`;
-};
 
 /**
  * This is the MQTT Api interface which implements the MQTT messaging protocol
@@ -52,7 +41,7 @@ export default class MQTTApi {
    * @returns {*} returns an instance of an MQTT object
    */
   connectClient() {
-    return connect(this.getEndpoint(), this.clientId);
+    return mqtt.connect(this.getEndpoint(), this.clientId);
   }
 
   /**
@@ -70,10 +59,10 @@ export default class MQTTApi {
     const IOT_ENDPOINT = "a2gac7ap3hk6n-ats.iot.eu-west-2.amazonaws.com";
 
     // your AWS access key ID
-    const KEY_ID = process.env.REACT_APP_ACCESS_KEY_ID;
+    const KEY_ID = process.env.REACT_APP_IOT_ACCESS_KEY_ID;
 
     // your AWS secret access key
-    const SECRET_KEY = process.env.REACT_APP_SECRET_KEY;
+    const SECRET_KEY = process.env.REACT_APP_IOT_SECRET_KEY;
 
     // date & time
     const dt = new Date().toISOString().replace(/[^0-9]/g, "");
@@ -106,6 +95,7 @@ export default class MQTTApi {
   subscribeClient(topic, callBack) {
     this.client.subscribe(topic, (err) => {
       if (err) return;
+      console.log(err)
       callBack();
     });
   }
@@ -120,7 +110,6 @@ export default class MQTTApi {
    */
   onConnect(callBack) {
     this.client.on("connect", () => {
-      let _ = this.testing ? "" : console.log("Connected!");
       callBack();
     });
   }
@@ -152,9 +141,6 @@ export default class MQTTApi {
   onMessage(callBack) {
     this.client.on("message", (topic, message) => {
       let decodedMessage = message.toString();
-      let _ = this.testing
-        ? ""
-        : console.log("message arrived", decodedMessage);
       callBack(decodedMessage);
     });
   }
@@ -168,7 +154,7 @@ export default class MQTTApi {
   publishMessage(topic, payload) {
     this.client.publish(topic, JSON.stringify(payload), { qos: 0 }, (error) => {
       if (error) {
-        let _ = this.testing ? "" : console.log("Publish error: ", error);
+        console.log(e)
       } else {
       }
     });

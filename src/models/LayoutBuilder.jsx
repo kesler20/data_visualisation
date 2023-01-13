@@ -180,7 +180,6 @@ export default class LayoutBuilder {
       if (prop !== "margin" || prop !== "autosize") {
         filtered[prop] = this.layout[prop];
       }
-      return this
     });
     this.layout = {
       ...filtered,

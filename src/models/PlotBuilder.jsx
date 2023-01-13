@@ -1,5 +1,6 @@
 import TraceBuilder from "./TraceBuilder";
 import LayoutBuilder from "./LayoutBuilder";
+import DatabaseApi from "../APIs/DatabaseApi";
 
 /**
  * This is an interface for the Plotly Library
@@ -57,7 +58,7 @@ export default class PlotBuilder {
   }
 
   removeTrace(traceID) {
-    this.plotData = this.plotData.filter((trace, index) => index === traceID);
+    this.plotData = this.plotData.filter((trace, index) => index == traceID);
     return this;
   }
 
@@ -118,7 +119,6 @@ export default class PlotBuilder {
       .addLayoutData(this.layout)
       .addAxis(axis, label)
       .buildLayout();
-    console.log(this.layout)
     return this;
   }
 

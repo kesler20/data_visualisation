@@ -1,6 +1,7 @@
 import React from "react";
-import { links, googleLinks } from "../../data/links";
+import { links, pageLinks } from "../../data/links";
 import Divider from "../divider/Divider";
+import { NavLink } from "react-router-dom";
 
 const SidebarIcon = (props) => {
   return (
@@ -17,11 +18,19 @@ const Sidebar = () => {
   return (
     <div className="fixed top-0 left-0 h-screen w-16 flex flex-col bg-gray-50 text-white shadow-lg pt-24">
       {links.map((link, index) => {
-        return <SidebarIcon key={index} icon={link.icon} tooltip={link.name} />;
+        return (
+          <a href="https://github.com/kesler20/data_visualisation">
+            <SidebarIcon key={index} icon={link.icon} tooltip={link.name} />;
+          </a>
+        );
       })}
       <Divider />
-      {googleLinks.map((link, index) => {
-        return <SidebarIcon key={index} icon={link.icon} tooltip={link.name} />;
+      {pageLinks.map((link, index) => {
+        return (
+          <NavLink to={`${link.name}`}>
+            <SidebarIcon key={index} icon={link.icon} tooltip={link.name} />;
+          </NavLink>
+        );
       })}
     </div>
   );
